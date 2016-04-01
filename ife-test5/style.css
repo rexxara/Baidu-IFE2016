@@ -1,0 +1,105 @@
+a,p,h1,h2,h3,h4,span,li,table{font-family:\5fae\8f6f\96c5\9ed1;}
+#header{
+    background: rgb(51, 51, 51);
+    height: 50px;
+    width: 100%;
+}
+#header img{
+    height: 65%;
+    width: 5%;
+    padding-top: 5px;
+    padding-left: 30px;
+}
+#header ul{
+float: right;
+padding-left: 60px;
+}
+
+#header ul li a{
+    text-decoration: none;
+    color: white;
+}
+#container{
+    background-color: rgb(222, 222, 222);
+}
+.artical{
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-right: 2px solid rgb(163,163 ,163 );
+    border-bottom: 2px solid rgb(163,163 ,163 );
+    margin-bottom: 40px;
+}
+#main{
+    width: 75%;
+    float: left;
+
+}
+#leftside{
+    margin-top: 20px;
+    padding: 20px;
+    width: 20%;
+    float: right;
+    margin-right: 20px;
+    background: white;
+    border-right: 2px solid rgb(163,163 ,163 );
+    border-bottom: 2px solid rgb(163,163 ,163 );
+}
+#leftside h2{
+    border-left: 3px solid gray;
+}
+h3,span{
+    color: gray;
+}
+.picture{
+    border: 1px solid gray;
+    width: 200px;
+    float: left;
+}
+.picture p{
+    text-align: center;
+}
+.picture img{
+     padding: 35px;
+     width: 160px;
+     height: 130px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#first{
+    background: rgb(51, 51, 51);
+    color: white;
+}
+#last{
+    background: rgb(204, 204, 204);
+    border: rgb(204, 204, 204);
+}
+#submit{
+    width: 90%;
+    height: 6%;
+    background: rgb(51, 85, 208);
+    border-radius: 5px;
+    border: rgb(51, 85, 208);
+    color: white;
+}
+
+#subContainer span{
+    color: black;
+}
+#footer{
+    background: rgb(0, 0, 0);
+    height: 80px;
+    clear: both;
+}
+
+#footer p{
+    text-align: center;
+    line-height: 80px;
+        color: white;
+}
+#pictureContainer{
+    height: 580px;
+}

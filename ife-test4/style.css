@@ -1,0 +1,29 @@
+a,p,h1,h2,h3,h4,span,li,label{	text-indent: 2em;	font-weight: bold; font-family:\5fae\8f6f\96c5\9ed1;}
+div,img{border: 1px solid #999;	background-color: #eee;}
+body {
+	border-color:#999;
+}
+#test{
+    width: 400px;
+    height: 200px;
+    background: gray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    overflow: hidden;
+}
+#test div{
+    border: 50px solid yellow;
+    border-radius: 50px;
+    width: 0px;
+}
+#left{
+    margin-left: -50px;
+    margin-top: -50px;
+}
+#right{
+    margin-left: 350px;
+    margin-top: 100px;
+}
