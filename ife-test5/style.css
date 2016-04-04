@@ -31,6 +31,10 @@ padding-left: 60px;
     border-bottom: 2px solid rgb(163,163 ,163 );
     margin-bottom: 40px;
 }
+.artical>p>img{
+    width: 50%;
+    height: 28.5%;
+}
 #main{
     width: 75%;
     float: left;
@@ -40,8 +44,8 @@ padding-left: 60px;
     margin-top: 20px;
     padding: 20px;
     width: 20%;
-    float: right;
-    margin-right: 20px;
+    float: left;
+    margin-left: 20px;
     background: white;
     border-right: 2px solid rgb(163,163 ,163 );
     border-bottom: 2px solid rgb(163,163 ,163 );
@@ -54,16 +58,19 @@ h3,span{
 }
 .picture{
     border: 1px solid gray;
-    width: 200px;
+    width: 25%;
+    height: 20%;
     float: left;
 }
 .picture p{
     text-align: center;
+    margin: 0px;
+    margin-bottom: -30px;
 }
 .picture img{
      padding: 35px;
-     width: 160px;
-     height: 130px;
+     width: 75%;
+     height: 43.5%;
 }
 table{
     width: 100%;
@@ -101,5 +108,5 @@ table{
         color: white;
 }
 #pictureContainer{
-    height: 580px;
+    height: 65%;
 }
