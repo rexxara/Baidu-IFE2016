@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>task 18</title>
+        <style type="text/css">
+        li{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #66ccff;
+            color: black;
+            margin: 0 10px;
+            line-height: 50px;
+            padding: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+        li:hover{
+            cursor: pointer;
+        }
+        ul{
+            padding-left: 0px;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="text" placeholder="please enter" id="inputText">
+            <input type="button" value="insertInLeft" id="insertLeft">
+            <input type="button" value="insertInRight" id="insertRight">
+            <input type="button" value="removeInRight" id="removeRight">
+            <input type="button" value="removeInLeft" id="removeLeft">
+        </div>
+        <ul id="content"></ul>
+        <script type="text/javascript">
+        var txt=document.getElementById("inputText");
+        var content=document.getElementById("content");
+        //insertLeft
+        document.getElementById("insertLeft").addEventListener("click",function(){
+        	var newItem=document.createElement("li");
+        	var textNode=document.createTextNode(txt.value);
+        	newItem.appendChild(textNode);
+        	content.insertBefore(newItem,content.childNodes[0]);
+        },false)
+        //insertRight
+                document.getElementById("insertRight").addEventListener("click",function(){
+        	var newItem=document.createElement("li");
+        	var textNode=document.createTextNode(txt.value);
+        	newItem.appendChild(textNode);
+        	content.appendChild(newItem);
+        },false)
+        //removeLeft
+        document.getElementById("removeLeft").addEventListener("click",function(){
+        	alert("removeLeftNode: "+content.firstChild.innerHTML);
+        	content.removeChild(content.firstChild);
+        },false)
+        //removeRight
+        document.getElementById("removeRight").addEventListener("click",function(){
+        	alert("removeLeftNode: "+content.childNodes[content.childNodes.length-1].innerHTML);
+        	content.removeChild(content.childNodes[content.childNodes.length-1]);
+        },false)
+        content.addEventListener("click",function(e){
+        	content.removeChild(e.target);
+        },false)
+        </script>
+    </body>
+</html>

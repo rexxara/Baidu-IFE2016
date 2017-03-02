@@ -1,0 +1,44 @@
+.rex{
+    width:100px;
+	height:100px;
+	background:red;
+	position:relative;
+	animation: action 10s linear infinite;
+	-webkit-animation:action 10s linear infinite; /* Safari and Chrome */
+}
+
+
+@keyframes myfirst
+{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+}
+
+@keyframes action {
+from {
+  transform: rotate(0deg)  translate(100px) rotate(0deg);
+}
+to {
+  transform: rotate(360deg) translate(100px) rotate(-360deg);
+ }
+}
+@-webkit-keyframes action {
+from {
+  transform: rotate(0deg)  translate(100px) rotate(0deg);
+}
+to {
+  transform: rotate(360deg) translate(100px) rotate(-360deg);
+ }
+}

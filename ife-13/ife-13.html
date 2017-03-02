@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IFE JavaScript Task 01</title>
+    </head>
+    <body>
+        <label>Please input your jiecao value:<input type="text" id="aqi-input"></label>
+        <button id="button">confirm</button>
+        <div>your jiecao value:<span id="aqi-display">no jiecao inside</span></div>
+    </body>
+    <script type="text/javascript">
+    function confirm(){
+        var info =document.getElementById("aqi-input").value;
+        document.getElementById("aqi-display").innerHTML=info;
+    }
+		document.getElementById('button').addEventListener("click",confirm,false)
+
+    </script>
+</html>

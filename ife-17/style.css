@@ -1,0 +1,24 @@
+.aqi-chart-wrap{
+height: 600px;
+background: #66ccff;
+}
+.aqi-chart-chart{
+    padding: 0;
+    margin: auto;
+    height: 500px;
+}
+.aqi-chart-chart>li{
+ list-style-type: none;
+ background: white;
+ float: left;
+ width: 14px;
+ margin-left: 4px;
+}
+.clear-fix{
+    overflow: hidden;
+}
+table{
+    margin: auto;
+-webkit-transform: rotateY(180deg);
+-webkit-transform: rotateX(180deg);
+}

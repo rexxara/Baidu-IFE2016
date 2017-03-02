@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .form {
+            width: 250px;
+            clear: both;
+        }
+        
+        .form>div {
+            float: right;
+        }
+        
+        .valid {
+            border: 1px solid #32cd32 !important;
+        }
+        
+        .invalid {
+            border: 1px solid red !important;
+        }
+        
+        .invalidHint {
+            color: red !important;
+        }
+        
+        .validHint {
+            color: #32cd32 !important;
+        }
+        
+        body {
+            font-family: "Microsoft Yahei"
+        }
+        
+        input[type="button"] {
+            border: none;
+            background-color: #2F79BA;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding: 7px;
+        }
+        
+        p {
+            text-align: right;
+            font-size: .8rem;
+            color: #ffffff;
+            margin: 0 0 0 35px;
+        }
+        
+        input:focus+p {
+            color: #777777;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form" action="" method="get" onSubmit="return checkSubmit();">
+        <div class="name">
+            <label for="name"><b class="padding"></b>名称</label>
+            <input class="item" type="text" name="name" />
+            <p class="hint ">必填，长度为4~16个字符</p>
+        </div>
+        <div class="passWord">
+            <label for="passWord">密码</label>
+            <input class="item" type="password" name="passWord" />
+            <p class="hint">请输入密码6~20个字符</p>
+        </div>
+        <div class="passWordConfirm">
+            <label for="passWordConfirm">密码确认</label>
+            <input class="item" type="password" name="passWordConfirm" />
+            <p class="hint">再次输入相同密码</p>
+        </div>
+        <div class="email">
+            <label for="email">邮箱</label>
+            <input class="item" type="text" name="email" />
+            <p class="hint">&nbsp;</p>
+        </div>
+        <div class="phone">
+            <label for="phone">手机</label>
+            <input class="item" type="text" name="phone" />
+            <p class="hint">&nbsp;</p>
+        </div>
+        <input type="submit" class="submit" value="submit">
+    </form>
+    <script type="text/javascript">
+        var formSetting = {
+            name: "必填，长度为4~16个字符",
+            passWord: "请输入密码6~20个字符",
+            passWordConfirm: '再次输入相同密码',
+            email: "&nbsp;",
+            phone: "&nbsp;"
+        }
+        var checkResult = {
+            name: false,
+            passWord: false,
+            passWordConfirm: false,
+            email: false,
+            phone: false
+        }
+        function getHint(item) {
+            var hint;
+            Array.prototype.map.call(item.parentNode.childNodes, function (elem) {
+                if (elem.nodeName == 'P') {
+                    hint = elem;
+                }
+            });
+            return hint;
+        }
+        var list = document.getElementsByClassName('item');
+        Array.prototype.map.call(list, addEvent);
+        function addEvent(item) {
+            item.addEventListener("blur", function () { checkForm(item) });
+            item.addEventListener("focus", function () { reset(item) });
+        }
+        function reset(item) {
+            item.classList.remove('valid');
+            item.classList.remove('invalid');
+            var thisHint = getHint(item);
+            thisHint.classList.remove("invalidHint");
+            thisHint.classList.remove("validHint");
+            thisHint.innerText = formSetting[item.name];
+        }
+
+
+
+
+        function checkForm(item) {
+
+            switch (item.name) {
+                case 'name':
+                    {
+                        var thisHint = getHint(item);
+                        if (item.value.length >= 4 && item.value.length <= 16) {
+                            checkResult[item.name] = true;
+                            item.classList.add('valid');
+                            thisHint.innerText = item.name + "valid";
+                            thisHint.classList.add('validHint');
+                        } else {
+                            item.classList.add('invalid');
+                            thisHint.innerText = item.name + "invalid";
+                            thisHint.classList.add('invalidHint');
+                        }
+                    }
+                    break;
+                case 'passWord': {
+                    var thisHint = getHint(item);
+                    if (item.value.length > 6 && item.value.length <= 20) {
+                        checkResult[item.name] = true;
+                        item.classList.add('valid');
+                        thisHint.innerText = item.name + "valid";
+                        thisHint.classList.add('validHint');
+                    } else {
+                        item.classList.add('invalid');
+                        thisHint.innerText = item.name + "invalid";
+                        thisHint.classList.add('invalidHint');
+                    }
+                }
+                    break;
+                case 'passWordConfirm': {
+                    var thisHint = getHint(item);
+                    if ((item.value === document.getElementsByClassName("passWord")[0].getElementsByClassName("item")[0].value) && (item.value.length !== 0)) {
+                        checkResult[item.name] = true;
+                        item.classList.add('valid');
+                        thisHint.innerText = item.name + "valid";
+                        thisHint.classList.add('validHint');
+                    } else {
+                        item.classList.add('invalid');
+                        thisHint.innerText = item.name + "invalid";
+                        thisHint.classList.add('invalidHint');
+                    }
+                }
+                    break;
+                case 'email': {
+                    var thisHint = getHint(item);
+                    if (isEmail(item.value)) {
+                        checkResult[item.name] = true;
+                        item.classList.add('valid');
+                        thisHint.innerText = item.name + "valid";
+                        thisHint.classList.add('validHint');
+                    } else {
+                        item.classList.add('invalid');
+                        thisHint.innerText = item.name + "invalid";
+                        thisHint.classList.add('invalidHint');
+                    }
+                }
+                    break;
+                case 'phone': {
+                    var thisHint = getHint(item);
+                    if (item.value.length === 11) {
+                        checkResult[item.name] = true;
+                        item.classList.add('valid');
+                        thisHint.innerText = item.name + "valid";
+                        thisHint.classList.add('validHint');
+                    } else {
+                        item.classList.add('invalid');
+                        thisHint.innerText = item.name + "invalid";
+                        thisHint.classList.add('invalidHint');
+                    }
+                }
+                    break;
+            }
+        }
+        function checkSubmit() {
+
+            var event = new MouseEvent('blur');
+            for (var i = 0; i < list.length; i++) {
+                list[i].dispatchEvent(event);
+            }
+            let counter = 0;
+            for (let key in checkResult) {
+                if (checkResult[key] === false) {
+                    let alertSting = key + 'isWrong';
+                    alert(alertSting);
+                } else {
+                    counter++;
+                }
+            }
+            if (counter == 5) {
+                return true;
+            }
+            return false;
+        }
+
+        function isEmail(str) {
+            var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            return reg.test(str);
+        }
+    </script>
+</body>
+
+</html>

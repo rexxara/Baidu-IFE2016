@@ -1,0 +1,33 @@
+div{
+    border: 1px solid crimson;
+    background: white;
+}
+.first{
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+}
+.second{
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    float: left;
+    margin-left: 63px;
+}
+.third{
+    width: 200px;
+    height: 200px;
+    margin-top: 150px;
+    float: left;
+    margin-left: 25px;
+}
+.forth{
+    width: 70px;
+    height: 50px;
+    margin-top: 75px;
+    float: left;
+    margin-left: 15px;
+}
+.active{
+    background: #66ccff;
+}

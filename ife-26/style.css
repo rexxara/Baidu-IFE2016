@@ -1,0 +1,88 @@
+body{
+	background: black;
+}
+.pla{
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	border-radius: 50px;
+}
+#gallery1{
+width: 900px;
+height: 600px;
+margin: auto;
+display: flex;
+}
+#gallery1>span{
+	display: none;
+	margin: auto;
+}
+.rex{
+    width:100px;
+	height:100px;
+	background:red;
+	position:relative;
+	animation: roAction 10s linear infinite;
+	-webkit-animation:roAction 10s linear infinite; /* Safari and Chrome */
+}
+.ss{
+	position: absolute;
+	left: 45%;
+	top: 45%;
+	width: 50px;
+	height: 40px;
+	background: #66ccff;
+	margin: 20px;
+		animation: action  10s linear infinite;
+	-webkit-animation:action 10s linear infinite; /* Safari and Chrome */
+}
+
+@keyframes myfirst
+{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+}
+
+@keyframes action {
+from {
+  transform: rotate(0deg)  translate(400px) rotate(0deg);
+}
+to {
+  transform: rotate(360deg) translate(400px) rotate(-360deg);
+ }
+}
+@-webkit-keyframes action {
+from {
+
+  transform: rotate(0deg)  translate(400px) rotate(0deg);
+}
+to {
+
+  transform: rotate(360deg) translate(400px) rotate(-360deg);
+ }
+}
+@keyframes roAction {
+from {
+	transform-origin: -50% -50%;
+  transform: rotate(0deg);
+}
+to {
+	transform-origin: -50% -50%;
+  transform: rotate(360deg);
+ }
+}
